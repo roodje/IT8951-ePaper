@@ -207,8 +207,8 @@ UBYTE Display_BMP_Example(UWORD Panel_Width, UWORD Panel_Height, UDOUBLE Init_Ta
     Paint_SetBitsPerPixel(BitsPerPixel);
     Paint_Clear(WHITE);
 
-    char Path[30];
-    sprintf(Path,"./pic/%dx%d_0.bmp", WIDTH, HEIGHT);
+    char Path[80];
+    sprintf(Path,"/home/pi/photoframe/software/IT8951-ePaper/Raspberry/pic/%dx%d_0.bmp", WIDTH, HEIGHT);
 
     GUI_ReadBmp(Path, 0, 0);
 
@@ -224,7 +224,7 @@ UBYTE Display_BMP_Example(UWORD Panel_Width, UWORD Panel_Height, UDOUBLE Init_Ta
             break;
         }
         case BitsPerPixel_4:{
-            Paint_DrawString_EN(10, 10, "4 bits per pixel 16 grayscale", &Font24, 0xF0, 0x00);
+            Paint_DrawString_EN(10, 10, "", &Font24, 0xF0, 0x00);
             EPD_IT8951_4bp_Refresh(Refresh_Frame_Buf, 0, 0, WIDTH,  HEIGHT, false, Init_Target_Memory_Addr,false);
             break;
         }
